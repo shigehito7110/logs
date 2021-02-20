@@ -1,0 +1,19 @@
+optional: trueで外部キーにnilを許容できる
+has_oneで1対1の関係性定義
+scope :active, -> { where(active: true) }
+このように書くことによってModel.activeがModel.where(active: true)となるのでコントローラーの可読性が増す。
+引数を取ることも可能。
+
+ActiveRecord::Base.transaction do
+    line_foods.each do |line_food|
+      line_food.update_attributes!(active: false, order: self)
+    end
+     self.save!
+end
+
+ActiveRecord::Base.transaction do ~ endで囲むことによって例外が発生した場合にロールバックトランザクションが走る
+Rails の場合は自動で例外処理が走るので、使い分けが少し理解していない。
+もう少し調べる必要がある。
+
+apiのurlにバージョン番号を持たせてスイッチしやすくする
+
