@@ -1,0 +1,43 @@
+belongs_toで使用可能になるメソッド
+* association
+* association=(associate)
+上記二つはアクセサメソッド
+
+* build_association(attributes = {})
+サブクラスのインスタンスをアソシエーション付きでビルド
+
+* create_association(attributes = {})
+* create_association!(attributes = {})
+* reload_association
+associationの部分はbelongs_toに渡されるシンボル引数
+
+ status: :internal_server_errorで500番台エラーを返す。
+
+モデル.where(カラム: 配列)で複数検索が可能
+知っているメソッドにも他の使用法がたくさんあるかもしれない。
+
+競合が発生するトランザクションはlockやwith_lockを使用し処理まちの状態を作る。
+もう少し、調べる必要がある。
+
+トランザクションは張るか否かを考える。
+
+<Router>
+  <Switch>
+    <Route
+       exact
+       path=‘パス’>
+         <コンポーネント>
+    </Route>
+  </Switch>
+</Router>
+
+exactを指定することでパスが完全位置一致する場合のみにコンポーネントをレンダリングする
+ReactのRouteのpathでパラメータを指定したい場合は:パラメータ名で指定する
+
+Spaはいつも早いわけではない
+データの前にページをレンダリングするから早いように見えるだけ
+Apiを共有することができる=> モバイルとwebの開発が楽ちん
+
+crosで異なるorigin間の通信を設定する
+http://localhost:3000とhttp://localhost:3001だと普通はダメだけどcrosでサーバサイドとフロントで更新できる
+
