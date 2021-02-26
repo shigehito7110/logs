@@ -1,0 +1,54 @@
+React Router のLinkは
+<Link to={パス名} key={index}>
+Link to という形で表記し、aタグを生成する
+<Link
+  to={{
+    pathname: "/courses",
+    search: "?sort=name",
+    hash: "#the-hash"
+  }}
+/>
+
+上記のように記述することで
+Propsを渡したパスの生成が可能
+<a href="/courses?sort=name#the-hash">
+上記のようになる
+
+Skeltonはロード中を表すuiパーツ
+Material-uiをimportすることで使用可能
+
+justify-content: space-around;
+でflexのスペースを等間隔で空ける
+
+App.jsのRouterでRouteを分けてそれぞれのコンポーネントを呼び出す
+Routeのパスをexactで完全マッチにし、path=”http://restaurants/:restaurantsId/foods”のように:でパラメータ指定できる
+その際にパラメーターが必要な場合はmatchで渡す(今回は:restaurantsIdの値が入る)
+呼び出されたコンポーネントでは渡されたparameterを使用し、
+fetchFoods(match.params.restaurantsId)でApiを叩いて戻り値を受け取る(今回はrestaurantsIdに紐づいたfoodsの情報)
+戻り値は.thenの引数に格納されるので、それを使用する
+
+Import {A as B} from ‘パス’
+でAの関数をBという名前でimportする
+
+useEffectないでreturnで関数を返すとクリーンアップ関数となる
+クリーンアップ関数はuseEffectないで呼ばれたコールバック関数の副作用を取り除くためにしようする。
+
+
+uerReducerには二つの引数を渡す
+1つ目は関数
+二つ目は初期状態
+
+Reducerとは二つの値をとり、一つの値を返す関数
+
+PresentationalComponentにstateを持たせてはいけない
+
+コンポーネントは子から親へ
+親コンポーネント=>(propsを渡す)子コンポーネント=>(渡された関数を実行)親コンポーネント
+
+Material-uiのDialogでダイアログを簡単に実装できる
+Dialogは二つのpropsをとる
+一つ目はopenでbooleanの値をとる
+二つ目はonClode関数をとる　これはモーダルを閉じるかいなか
+
+DialogにはDialotTitleなどのコンポーネントがある
+それらを使用することで簡単にモーダルと実装できる
