@@ -1,0 +1,38 @@
+src/components/shared_style.jsで共通のスタイリングをする
+ここではBaseButtonとRoundButton(BaseButtonを使って変形したやつ)を定義
+そのためstyled-componentsと色付けのためのCOLORS(style_constants)をimportしている
+
+あとは上記をそれぞれのコンポーネントファイルでimportし、それらをもとにボタンコンポーネントを作成する。
+
+Propsを渡さない場合はstyle(引数)でコンポーネントを作成するとシンプルに書ける
+
+
+History.pushで遷移させる
+apiはredirect_toが使用できない
+処理をapiに渡して遷移はフロントで実行する必要がある
+そのため、必要なparameterを渡したらhistory.push(‘./orders’)などで遷移させる必要がある。
+
+useEffectは副作用専用のhooks
+DOM更新後に呼び出す関数を定義する？
+
+React で
+
+const Hoge = () => {
+  return(…)
+};
+
+と
+
+const Hoge = () => 
+(
+  …
+);
+
+
+は同じ意味
+JSXだけを返す場合は下の記述の方がシンプルで良い
+
+Rails 6.1の変更点 update_attributesが使用できなくなっていた
+Updateが推奨になった
+ActiveRecord::Baseでネストする際はupdate!とすると良さそう
+
